@@ -26,6 +26,9 @@ jobs:
     - name: Build the calculator application
       run: |
         echo "Building the application ..."
-        python -m py_compile test_calculator.py
         python -m py_compile calculator.py
 
+    - name: Testx the calculator application
+      run: |
+        pip install pytest pytest-cov
+        pytest test_calculator.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
