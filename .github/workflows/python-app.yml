@@ -23,12 +23,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
 
-    - name: Build the calculator application
+    - name: Building the calculator application
       run: |
         echo "Building the application ..."
         python -m py_compile calculator.py
 
-    - name: Test the calculator application
+    - name: Testing the calculator application
       run: |
         pip install pytest pytest-cov
         pytest test_calculator.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
